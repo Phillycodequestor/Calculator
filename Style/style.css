@@ -1,0 +1,14 @@
+.container {
+	width: 370px;
+	border: 1px solid black;
+}
+
+.row {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.btn {
+	min-width: 70px;
+	max-width: 70px;
+}
