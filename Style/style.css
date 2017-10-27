@@ -1,8 +1,14 @@
+.shadow{
+box-shadow: 5px 5px  5px #888888;
+}
+
 .container {
 	width: 280px;
-	border: 1px solid black;
+	border: 1px solid grey;
+	border-radius: 15px;
 	margin-top: 50px;
-	background: DarkGrey;
+	background-color: LightBlue;
+	padding-bottom: 10px;
 }
 
 .row {
@@ -17,8 +23,11 @@
 }
 
 #screen{
-	border: 1px solid black;
+	border: 1px solid grey;
+	border-radius: 15px;
+	background-color: white;
 	height: 50px;
 	margin-top: 30px;
 	margin-bottom: 30px;
+	
 }
