@@ -1,7 +1,15 @@
 $(document).ready(function(){
 
+
+
 $('#seven').click(function(){
-	$('#screen').html('7');
+	
+
+
+$('#numbers').html('7');
 });
+
+
+
 
 });

@@ -16,6 +16,13 @@ box-shadow: 5px 5px  5px #888888;
 	margin-bottom: 10px;
 }
 
+#numbers{
+	text-align: right;
+}
+
+#total{
+	text-align: right;
+}
 
 .btn {
 	min-width: 42.91px;
@@ -26,8 +33,8 @@ box-shadow: 5px 5px  5px #888888;
 	border: 1px solid grey;
 	border-radius: 15px;
 	background-color: white;
-	height: 50px;
-	margin-top: 30px;
-	margin-bottom: 30px;
+	height: 80px;
+	margin-top: 20px;
+	margin-bottom: 20px;
 	
 }
