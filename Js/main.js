@@ -7,17 +7,23 @@ var v = " ";
 function chain(num){
 q += num; 
 $('#numbers').html(q);
+};
+
+function biggie(num){
+$('#total').html(num);	
 }; 
 
+//sends buttons value to top row
 $('button').click(function(){
-//document.getElementById("Clearevery").disabled = true;
 v = ($(this).attr('value'));
 chain(v);
+biggie(v);
 });
 
+//Clears all from top row
 $('#Clearevery').click(function(){
-	q = " ";
-	$('#numbers').html(q);
+q = " ";
+$('#numbers').html(q);
 });
 
 });
