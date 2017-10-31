@@ -2,8 +2,9 @@ $(document).ready(function(){
 
 var q = " ";
 var v = " ";
+var r = " ";
 
-//holds numbers etc. chained together in display
+
 function chain(num){
 q += num; 
 $('#numbers').html(q);
@@ -16,7 +17,6 @@ $('#total').html(num);
 //sends buttons value to top row
 $('button').click(function(){
 v = ($(this).attr('value'));
-chain(v);
 biggie(v);
 });
 
@@ -25,5 +25,12 @@ $('#Clearevery').click(function(){
 q = " ";
 $('#numbers').html(q);
 });
+
+//START HERE: only operand showing up in top row 
+$('.opera').click(function(){
+r = ($(this).attr('value'));
+chain($('#total').val() + r);
+});
+
 
 });
