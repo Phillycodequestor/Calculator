@@ -2,7 +2,6 @@ $(document).ready(function(){
 
 var q = " ";
 var v = " ";
-var r = " ";
 
 
 function chain(num){
@@ -10,13 +9,14 @@ q += num;
 $('#numbers').html(q);
 };
 
+//displays number in bottom row
 function biggie(num){
 $('#total').html(num);	
 }; 
 
-//sends buttons value to top row
+//sends button's value to bottom row
 $('button').click(function(){
-v = ($(this).attr('value'));
+v += ($(this).attr('value'));
 biggie(v);
 });
 
@@ -26,10 +26,11 @@ q = " ";
 $('#numbers').html(q);
 });
 
-//START HERE: only operand showing up in top row 
+
 $('.opera').click(function(){
-r = ($(this).attr('value'));
-chain($('#total').val() + r);
+chain($('#total').html());
+$('#total').html(" ");
+v = " ";
 });
 
 
