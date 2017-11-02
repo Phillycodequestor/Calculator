@@ -20,13 +20,15 @@ v += ($(this).attr('value'));
 biggie(v);
 });
 
-//Clears all from top row
+//Clears both rows
 $('#Clearevery').click(function(){
 q = " ";
+v = " ";
 $('#numbers').html(q);
+$('#total').html(v);
 });
 
-
+//sends bottom to top when operand clicked
 $('.opera').click(function(){
 chain($('#total').html());
 $('#total').html(" ");
