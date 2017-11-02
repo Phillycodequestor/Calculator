@@ -3,7 +3,7 @@ $(document).ready(function(){
 var q = " ";
 var v = " ";
 
-
+//displays number in top row
 function chain(num){
 q += num; 
 $('#numbers').html(q);
@@ -32,6 +32,8 @@ chain($('#total').html());
 $('#total').html(" ");
 v = " ";
 });
+
+
 
 
 });
