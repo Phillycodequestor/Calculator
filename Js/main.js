@@ -15,9 +15,16 @@ $('#total').html(num);
 }; 
 
 //sends button's value to bottom row
-$('button').click(function(){
+$('.number').click(function(){
+$('#total').html(" ");
 v += ($(this).attr('value'));
 biggie(v);
+});
+
+//sends bottom to top when operand clicked
+$('.opera').click(function(){
+chain($('#total').html() + $(this).attr('value'));
+v = " ";
 });
 
 //Clears both rows
@@ -27,15 +34,6 @@ v = " ";
 $('#numbers').html(q);
 $('#total').html(v);
 });
-
-//sends bottom to top when operand clicked
-$('.opera').click(function(){
-chain($('#total').html());
-$('#total').html(" ");
-v = " ";
-});
-
-
 
 
 });
