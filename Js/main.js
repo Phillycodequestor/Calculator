@@ -30,9 +30,10 @@ v = " ";
 //Clears both rows
 $('#Clearevery').click(function(){
 q = " ";
-v = " ";
+v = 0;
 $('#numbers').html(q);
 $('#total').html(v);
+v = " ";
 });
 
 
