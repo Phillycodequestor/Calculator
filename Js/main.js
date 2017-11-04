@@ -2,6 +2,7 @@ $(document).ready(function(){
 
 var q = " ";
 var v = " ";
+var total = 0;
 
 //displays number in top row
 function chain(num){
@@ -22,9 +23,18 @@ biggie(v);
 });
 
 //sends bottom to top when operand clicked
+//START HERE get plus sign to tally and display
 $('.opera').click(function(){
 chain($('#total').html() + $(this).attr('value'));
-v = " ";
+v = 0;
+
+if (this.value === " +"){
+total += $('#total').html();
+$('#total').html() = " ";
+biggie(total);
+}
+
+
 });
 
 //Clears both rows
@@ -36,5 +46,11 @@ $('#total').html(v);
 v = " ";
 });
 
+//Clears bottom row
+$('#Clearlowrow').click(function(){
+v = 0;
+$('#total').html(v);
+v=" ";
+});
 
 });
