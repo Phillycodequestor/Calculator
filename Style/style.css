@@ -18,11 +18,16 @@ box-shadow: 5px 5px  5px #888888;
 
 #numbers{
 	text-align: right;
-}
+	height: 24px;
+	margin-bottom: 0px;
+	}
 
 #total{
 	text-align: right;
-}
+	height: 50px;
+	font-size: 2em;
+	font-weight: bold;
+	}
 
 .btn {
 	min-width: 42.91px;
@@ -32,7 +37,7 @@ box-shadow: 5px 5px  5px #888888;
 	border: 1px solid grey;
 	border-radius: 15px;
 	background-color: white;
-	height: 80px;
+	height: 85px;
 	margin-top: 20px;
 	margin-bottom: 20px;
 	}
