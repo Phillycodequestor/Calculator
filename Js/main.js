@@ -3,7 +3,8 @@ $(document).ready(function(){
 var q = " ";
 var v = " ";
 var total = 0;
-
+var operand = " ";
+/*
 //displays number in top row
 function chain(num){
 q += num; 
@@ -21,21 +22,45 @@ $('#total').html(" ");
 v += ($(this).attr('value'));
 biggie(v);
 });
-
+*/
 //sends bottom to top when operand clicked
 //START HERE get plus sign to tally and display
 $('.opera').click(function(){
-chain($('#total').html() + $(this).attr('value'));
-v = 0;
-
-if (this.value === " +"){
-total += $('#total').html();
-$('#total').html() = " ";
-biggie(total);
+if(this.value === " +"){
+operand = "+=";
 }
+});
 
+$('.number').click(function(){
+
+if(operand === "+="){
+	total += parseInt(this.value);
+	alert(total);
+}
+else {
+	total += parseInt(this.value);
+};
 
 });
+
+
+
+/*
+var add = {
+	value: "+"
+};
+var subtract = {
+	value: "-"
+};
+var divide = {
+	value: "/"
+};
+var multiply = {
+	value: "*"
+}
+*/
+
+
 
 //Clears both rows
 $('#Clearevery').click(function(){
