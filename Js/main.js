@@ -4,6 +4,7 @@ var q = " ";
 var v = " ";
 var total = 0;
 var operand = " ";
+var operation;
 /*
 //displays number in top row
 function chain(num){
@@ -23,43 +24,44 @@ v += ($(this).attr('value'));
 biggie(v);
 });
 */
-//sends bottom to top when operand clicked
-//START HERE get plus sign to tally and display
-$('.opera').click(function(){
-if(this.value === " +"){
-operand = "+=";
-}
-});
 
-$('.number').click(function(){
+//RETURNS A FUNCTION TO PERFORM OPERATION/////////////////////////
+function operator (val) {
 
-if(operand === "+="){
-	total += parseInt(this.value);
-	alert(total);
+if(val === " +"){
+return function add(num){
+total += num;
+};
 }
+
+else if(val === " -") {
+return function subtract(num){
+total -= num;
+};
+}
+
+else if(val === " /") {
+return function divide(num){
+total /= num;
+};
+}
+
 else {
-	total += parseInt(this.value);
+return function multiply(num){
+total *= num;
 };
-
-});
-
-
-
-/*
-var add = {
-	value: "+"
-};
-var subtract = {
-	value: "-"
-};
-var divide = {
-	value: "/"
-};
-var multiply = {
-	value: "*"
 }
-*/
+};
+////////////////////////////////////////////////////////
 
+
+//CALLS OPERATOR FUNC TO RECIEVE FUNCTION + - * /
+$('.opera').click(function(){
+operation = operator(this.value);
+});
+///////////////////////////////////////////////////////
+
+//START HERE: what happens to number first time clicked?
 
 
 //Clears both rows
