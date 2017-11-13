@@ -16,14 +16,15 @@ $('#numbers').html(q);
 function biggie(num){
 $('#total').html(num);	
 }; 
+*/
 
 //sends button's value to bottom row
 $('.number').click(function(){
-$('#total').html(" ");
-v += ($(this).attr('value'));
-biggie(v);
+//$('#total').html(" ");
+v = ($(this).attr('value'));
+
+//biggie(v);
 });
-*/
 
 //RETURNS A FUNCTION TO PERFORM OPERATION/////////////////////////
 function operator (val) {
@@ -61,7 +62,7 @@ operation = operator(this.value);
 });
 ///////////////////////////////////////////////////////
 
-//START HERE: what happens to number first time clicked?
+//START HERE: set operation variable to add function initially so value added first time clicked.
 
 
 //Clears both rows
