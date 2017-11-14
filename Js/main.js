@@ -2,9 +2,11 @@ $(document).ready(function(){
 
 var q = " ";
 var v = " ";
-var total = 0;
+var total = " ";
 var operand = " ";
-var operation;
+var operation = function (num){
+total = num;
+};
 /*
 //displays number in top row
 function chain(num){
@@ -21,8 +23,8 @@ $('#total').html(num);
 //sends button's value to bottom row
 $('.number').click(function(){
 //$('#total').html(" ");
-v = ($(this).attr('value'));
-
+v = parseInt($(this).attr('value'));
+operation(v);
 //biggie(v);
 });
 
@@ -30,26 +32,30 @@ v = ($(this).attr('value'));
 function operator (val) {
 
 if(val === " +"){
-return function add(num){
+return function (num){
 total += num;
+alert(total);
 };
 }
 
 else if(val === " -") {
-return function subtract(num){
+return function (num){
 total -= num;
+alert(total);
 };
 }
 
 else if(val === " /") {
-return function divide(num){
+return function (num){
 total /= num;
+alert(total);
 };
 }
 
 else {
-return function multiply(num){
+return function (num){
 total *= num;
+alert(total);
 };
 }
 };
@@ -62,7 +68,7 @@ operation = operator(this.value);
 });
 ///////////////////////////////////////////////////////
 
-//START HERE: set operation variable to add function initially so value added first time clicked.
+//START HERE: Result should appear when operator clicked, not number.
 
 
 //Clears both rows
