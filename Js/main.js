@@ -34,41 +34,38 @@ function operator (val) {
 if(val === " +"){
 return function (num){
 total += num;
-alert(total);
 };
 }
 
 else if(val === " -") {
 return function (num){
 total -= num;
-alert(total);
 };
 }
 
 else if(val === " /") {
 return function (num){
 total /= num;
-alert(total);
 };
 }
 
 else {
 return function (num){
 total *= num;
-alert(total);
 };
 }
 };
 ////////////////////////////////////////////////////////
 
 
-//CALLS OPERATOR FUNC TO RECIEVE FUNCTION + - * /
+//CALLS OPERATOR FUNC TO RECEiVE FUNCTION + - * /
 $('.opera').click(function(){
 operation = operator(this.value);
+alert(total);
 });
 ///////////////////////////////////////////////////////
 
-//START HERE: Result should appear when operator clicked, not number.
+//START HERE: First two times number clicked, it appears in bottom row, then sum appears.
 
 
 //Clears both rows
