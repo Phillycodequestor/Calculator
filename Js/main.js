@@ -7,30 +7,36 @@ var operand = " ";
 var operation = function (num){
 total = num;
 };
-/*
+
 //displays number in top row
 function chain(num){
 q += num; 
-$('#numbers').html(q);
+return q;
 };
 
 //displays number in bottom row
 function biggie(num){
 $('#total').html(num);	
 }; 
-*/
 
-//sends button's value to bottom row
+//Gets the number clicked and sends to operation function
 $('.number').click(function(){
 //$('#total').html(" ");
 v = parseInt($(this).attr('value'));
 operation(v);
-//biggie(v);
+biggie(v);
+chain(v);
+});
+
+//CALLS OPERATOR FUNC TO RECEiVE FUNCTION + - * /
+$('.opera').click(function(){
+operation = operator(this.value);
+biggie(total);
+$('#numbers').html(chain(this.value));
 });
 
 //RETURNS A FUNCTION TO PERFORM OPERATION/////////////////////////
 function operator (val) {
-
 if(val === " +"){
 return function (num){
 total += num;
@@ -58,14 +64,9 @@ total *= num;
 ////////////////////////////////////////////////////////
 
 
-//CALLS OPERATOR FUNC TO RECEiVE FUNCTION + - * /
-$('.opera').click(function(){
-operation = operator(this.value);
-alert(total);
-});
-///////////////////////////////////////////////////////
 
-//START HERE: First two times number clicked, it appears in bottom row, then sum appears.
+
+//START HERE: Get equals sign to work. put space in front of numbers. guard against double clicks on operators.
 
 
 //Clears both rows
