@@ -66,7 +66,7 @@ total *= num;
 
 
 
-//START HERE: Get equals sign to work. put space in front of numbers. guard against double clicks on operators.
+//START HERE: Get equals sign to work. guard against double clicks on operators.
 
 
 //Clears both rows
@@ -79,7 +79,7 @@ v = " ";
 });
 
 //Clears bottom row
-$('#Clearlowrow').click(function(){
+$('.Clearlowrow').click(function(){
 v = 0;
 $('#total').html(v);
 v=" ";
