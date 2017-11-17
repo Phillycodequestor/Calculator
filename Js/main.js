@@ -10,7 +10,7 @@ total = num;
 
 //displays number in top row
 function chain(num){
-q += num; 
+q += " " + num; 
 return q;
 };
 
