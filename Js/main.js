@@ -8,7 +8,7 @@ var operation = function (num){
 total = num;
 };
 
-//displays number in top row
+//adds to top row variable
 function chain(num){
 q += " " + num; 
 return q;
@@ -21,12 +21,18 @@ $('#total').html(num);
 
 //Gets the number clicked and sends to operation function
 $('.number').click(function(){
-//$('#total').html(" ");
 v = parseInt($(this).attr('value'));
 operation(v);
 biggie(v);
 chain(v);
 });
+
+//Clear top row
+function cleartop(){
+q = " ";
+$('#numbers').html(q);
+q = $('#total').html();
+}
 
 //CALLS OPERATOR FUNC TO RECEiVE FUNCTION + - * /
 $('.opera').click(function(){
@@ -35,39 +41,13 @@ biggie(total);
 $('#numbers').html(chain(this.value));
 });
 
-//RETURNS A FUNCTION TO PERFORM OPERATION/////////////////////////
-function operator (val) {
-if(val === " +"){
-return function (num){
-total += num;
-};
-}
+//Click equals: call cleartop and tally in bottom row
+$('#equals').click(function(){
+	biggie(total);
+	cleartop();
+});
 
-else if(val === " -") {
-return function (num){
-total -= num;
-};
-}
-
-else if(val === " /") {
-return function (num){
-total /= num;
-};
-}
-
-else {
-return function (num){
-total *= num;
-};
-}
-};
-////////////////////////////////////////////////////////
-
-
-
-
-//START HERE: Get equals sign to work. guard against double clicks on operators.
-
+//START HERE: disable operators, get clear buttons working.
 
 //Clears both rows
 $('#Clearevery').click(function(){
@@ -84,5 +64,33 @@ v = 0;
 $('#total').html(v);
 v=" ";
 });
+
+//RETURNS A FUNCTION TO PERFORM OPERATION/////////////////////////
+function operator (val) {
+if(val === "+"){
+return function (num){
+total += num;
+};
+}
+
+else if(val === "-") {
+return function (num){
+total -= num;
+};
+}
+
+else if(val === "/") {
+return function (num){
+total /= num;
+};
+}
+
+else {
+return function (num){
+total *= num;
+};
+}
+};
+////////////////////////////////////////////////////////
 
 });
