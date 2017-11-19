@@ -47,14 +47,13 @@ $('#equals').click(function(){
 	cleartop();
 });
 
-//START HERE: disable operators, get clear buttons working.
+
 
 //Clears both rows
 $('#Clearevery').click(function(){
-q = " ";
+//START HERE: needs to undo last operation when CE clicked; disable operators, 	
 v = 0;
-$('#numbers').html(q);
-$('#total').html(v);
+biggie(v);
 v = " ";
 });
 
