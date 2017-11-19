@@ -22,7 +22,7 @@ $('#total').html(num);
 //Gets the number clicked and sends to operation function
 $('.number').click(function(){
 v = parseInt($(this).attr('value'));
-operation(v);
+
 biggie(v);
 chain(v);
 });
@@ -36,6 +36,7 @@ q = $('#total').html();
 
 //CALLS OPERATOR FUNC TO RECEiVE FUNCTION + - * /
 $('.opera').click(function(){
+operation(v);
 operation = operator(this.value);
 biggie(total);
 $('#numbers').html(chain(this.value));
@@ -47,11 +48,9 @@ $('#equals').click(function(){
 	cleartop();
 });
 
-
-
 //Clears both rows
 $('#Clearevery').click(function(){
-//START HERE: needs to undo last operation when CE clicked; disable operators, 	
+//START HERE: needs to clear number out of top row variable, too; fix equals; disable operators, 	
 v = 0;
 biggie(v);
 v = " ";
