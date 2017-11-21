@@ -23,14 +23,13 @@ $('#total').html(num);
 $('.number').click(function(){
 v = parseInt($(this).attr('value'));
 biggie(v);
-
 });
 
 //Clear top row
 function cleartop(){
 q = " ";
 $('#numbers').html(q);
-q = $('#total').html();
+//q = $('#total').html();
 }
 
 //CALLS OPERATOR FUNC TO RECEiVE FUNCTION + - * /
@@ -48,22 +47,27 @@ $('#equals').click(function(){
 	cleartop();
 });
 
-//START HERE:  fix equals; disable operators,
 
 
-//Clears both rows
+
+//Clears number entered
 $('#Clearevery').click(function(){
- 	
 v = 0;
 biggie(v);
 v = " ";
 });
 
-//Clears bottom row
+//START HERE:  operator showing up in bottom row; fix equals; disable operators,
+//Clears everything
 $('.Clearlowrow').click(function(){
 v = 0;
 $('#total').html(v);
 v=" ";
+var operation = function (num){
+total = num;
+};
+total = " "; 
+cleartop();
 });
 
 //RETURNS A FUNCTION TO PERFORM OPERATION/////////////////////////
