@@ -25,13 +25,6 @@ v = parseInt($(this).attr('value'));
 biggie(v);
 });
 
-//Clear top row
-function cleartop(){
-q = " ";
-$('#numbers').html(q);
-//q = $('#total').html();
-}
-
 //CALLS OPERATOR FUNC TO RECEiVE FUNCTION + - * /
 $('.opera').click(function(){
 chain(v);
@@ -47,8 +40,12 @@ $('#equals').click(function(){
 	cleartop();
 });
 
-
-
+//Clear top row
+function cleartop(){
+q = " ";
+$('#numbers').html(q);
+//q = $('#total').html();
+}
 
 //Clears number entered
 $('#Clearevery').click(function(){
@@ -57,7 +54,7 @@ biggie(v);
 v = " ";
 });
 
-//START HERE:  operator showing up in bottom row; fix equals; disable operators,
+//START HERE:  Convert top row variable to an array, so operators can be added, deleted from end. 
 //Clears everything
 $('.Clearlowrow').click(function(){
 v = 0;
