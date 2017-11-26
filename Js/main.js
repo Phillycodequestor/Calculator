@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-var q = " ";
+var toprow = [];
 var v = " ";
 var total = " ";
 var operand = " ";
@@ -9,10 +9,10 @@ total = num;
 };
 
 //adds to top row variable
-function chain(num){
-q += " " + num; 
-return q;
-};
+//function chain(num){
+//q += " " + num; 
+//return q;
+//};
 
 //displays number in bottom row
 function biggie(num){
@@ -27,11 +27,12 @@ biggie(v);
 
 //CALLS OPERATOR FUNC TO RECEiVE FUNCTION + - * /
 $('.opera').click(function(){
-chain(v);
-operation(v);
-operation = operator(this.value);
-biggie(total);
-$('#numbers').html(chain(this.value));
+toprow.push(v);
+//operation(v);
+//operation = operator(this.value);
+//biggie(total);
+
+$('#numbers').html(toprow.toString());
 });
 
 //Click equals: call cleartop and tally in bottom row
@@ -42,8 +43,8 @@ $('#equals').click(function(){
 
 //Clear top row
 function cleartop(){
-q = " ";
-$('#numbers').html(q);
+ = " ";
+$('#numbers').html(toprow);
 //q = $('#total').html();
 }
 
@@ -54,7 +55,7 @@ biggie(v);
 v = " ";
 });
 
-//START HERE:  Convert top row variable to an array, so operators can be added, deleted from end. 
+//START HERE:  create way to change operator in top row. (can't pop it the first time. us if statement?) 
 //Clears everything
 $('.Clearlowrow').click(function(){
 v = 0;
