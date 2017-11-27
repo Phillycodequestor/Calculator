@@ -7,7 +7,7 @@ var operand = " ";
 var operation = function (num){
 total = num;
 };
-
+						
 //adds to top row variable
 //function chain(num){
 //q += " " + num; 
@@ -22,12 +22,13 @@ $('#total').html(num);
 //Gets the number clicked and sends to operation function
 $('.number').click(function(){
 v = parseInt($(this).attr('value'));
-biggie(v);
+toprow.push(v);
+//biggie(v);
 });
 
 //CALLS OPERATOR FUNC TO RECEiVE FUNCTION + - * /
 $('.opera').click(function(){
-toprow.push(v);
+toprow.push(this.value);
 //operation(v);
 //operation = operator(this.value);
 //biggie(total);
@@ -43,7 +44,7 @@ $('#equals').click(function(){
 
 //Clear top row
 function cleartop(){
- = " ";
+ 
 $('#numbers').html(toprow);
 //q = $('#total').html();
 }
@@ -55,7 +56,7 @@ biggie(v);
 v = " ";
 });
 
-//START HERE:  create way to change operator in top row. (can't pop it the first time. us if statement?) 
+//START HERE:  if last value in array is operator, can push another operator.
 //Clears everything
 $('.Clearlowrow').click(function(){
 v = 0;
