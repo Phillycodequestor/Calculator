@@ -26,9 +26,17 @@ toprow.push(v);
 //biggie(v);
 });
 
+//START HERE:  get commas out of array. 
 //CALLS OPERATOR FUNC TO RECEiVE FUNCTION + - * /
 $('.opera').click(function(){
+if (isNaN(toprow[toprow.length - 1])){
+toprow.pop();
 toprow.push(this.value);
+}
+else{
+toprow.push(this.value);
+}
+
 //operation(v);
 //operation = operator(this.value);
 //biggie(total);
@@ -44,7 +52,6 @@ $('#equals').click(function(){
 
 //Clear top row
 function cleartop(){
- 
 $('#numbers').html(toprow);
 //q = $('#total').html();
 }
@@ -56,7 +63,6 @@ biggie(v);
 v = " ";
 });
 
-//START HERE:  if last value in array is operator, can push another operator.
 //Clears everything
 $('.Clearlowrow').click(function(){
 v = 0;
