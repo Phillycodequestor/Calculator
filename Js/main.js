@@ -23,10 +23,10 @@ $('#total').html(num);
 $('.number').click(function(){
 v = parseInt($(this).attr('value'));
 toprow.push(v);
-//biggie(v);
+biggie(v);
 });
 
-//START HERE:  get commas out of array. 
+//START HERE: if i change operators, it changes the total  
 //CALLS OPERATOR FUNC TO RECEiVE FUNCTION + - * /
 $('.opera').click(function(){
 if (isNaN(toprow[toprow.length - 1])){
@@ -37,11 +37,11 @@ else{
 toprow.push(this.value);
 }
 
-//operation(v);
-//operation = operator(this.value);
-//biggie(total);
+operation(v);
+operation = operator(this.value);
+biggie(total);
 
-$('#numbers').html(toprow.toString());
+$('#numbers').html(toprow.join(' '));
 });
 
 //Click equals: call cleartop and tally in bottom row
