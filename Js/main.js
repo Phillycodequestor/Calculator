@@ -8,12 +8,6 @@ var operation = function (num){
 total = num;
 };
 						
-//adds to top row variable
-//function chain(num){
-//q += " " + num; 
-//return q;
-//};
-
 //displays number in bottom row
 function biggie(num){
 $('#total').html(num);	
@@ -24,9 +18,10 @@ $('.number').click(function(){
 v = parseInt($(this).attr('value'));
 toprow.push(v);
 biggie(v);
+operation(v);
 });
 
-//START HERE: if i change operators, it changes the total  
+//START HERE: APPEARS TO BE FIXED. DOUBLE CHECK: if i change operators, it changes the total  
 //CALLS OPERATOR FUNC TO RECEiVE FUNCTION + - * /
 $('.opera').click(function(){
 if (isNaN(toprow[toprow.length - 1])){
@@ -37,11 +32,11 @@ else{
 toprow.push(this.value);
 }
 
-operation(v);
+$('#numbers').html(toprow.join(' '));
+
+//operation(v);
 operation = operator(this.value);
 biggie(total);
-
-$('#numbers').html(toprow.join(' '));
 });
 
 //Click equals: call cleartop and tally in bottom row
