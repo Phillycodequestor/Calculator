@@ -21,7 +21,7 @@ biggie(v);
 operation(v);
 });
 
-//START HERE: APPEARS TO BE FIXED. DOUBLE CHECK: if i change operators, it changes the total  
+//START HERE: can't put double-digits in bottom row; clear buttons (what if second operand changes?)
 //CALLS OPERATOR FUNC TO RECEiVE FUNCTION + - * /
 $('.opera').click(function(){
 if (isNaN(toprow[toprow.length - 1])){
@@ -34,7 +34,6 @@ toprow.push(this.value);
 
 $('#numbers').html(toprow.join(' '));
 
-//operation(v);
 operation = operator(this.value);
 biggie(total);
 });
@@ -47,8 +46,9 @@ $('#equals').click(function(){
 
 //Clear top row
 function cleartop(){
-$('#numbers').html(toprow);
-//q = $('#total').html();
+$('#numbers').html(' ');
+toprow = [];
+toprow.push(total);
 }
 
 //Clears number entered
