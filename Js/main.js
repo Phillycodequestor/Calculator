@@ -15,13 +15,14 @@ $('#total').html(num);
 
 //Gets the number clicked and sends to operation function
 $('.number').click(function(){
-v = parseInt($(this).attr('value'));
+v += parseInt($(this).attr('value'));
+//START HERE: need to add double-digits to top row (what if second operand changes?)
 toprow.push(v);
 biggie(v);
 operation(v);
 });
 
-//START HERE: can't put double-digits in bottom row; clear buttons (what if second operand changes?)
+
 //CALLS OPERATOR FUNC TO RECEiVE FUNCTION + - * /
 $('.opera').click(function(){
 if (isNaN(toprow[toprow.length - 1])){
