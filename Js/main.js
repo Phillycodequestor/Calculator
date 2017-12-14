@@ -17,19 +17,18 @@ $('#total').html(num);
 
 //Gets the number clicked and sends to operation function
 $('.number').click(function(){
-v += parseInt($(this).attr('value'));
+v = parseInt($(this).attr('value'));
 biggie(v);
 });
 
-//START HERE: why isn't total showing up in bottom row? s(what if second operand changes?)
+
 //CALLS OPERATOR FUNC TO RECEiVE FUNCTION + - * /
 $('.opera').click(function(){
 
-//PROBLEM: WILL INTERFERE IF I WANT TO CHANGE SIGNS?
+
 operand = v;
 toprow.push(operand)
-
-
+//START HERE: when sign changes, total displayed changes(what if second operand changes?)
 if (isNaN(toprow[toprow.length - 1])){
 toprow.pop();
 toprow.push(this.value);
@@ -42,8 +41,6 @@ $('#numbers').html(toprow.join(' '));
 
 operation(v);
 operation = operator(this.value);
-
-v = " ";
 
 biggie(total);
 
