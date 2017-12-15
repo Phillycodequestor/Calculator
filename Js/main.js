@@ -4,7 +4,6 @@ $(document).ready(function(){
 var toprow = [];
 var v = " ";
 var total = " ";
-var operand = " ";
 var operation = function (num){
 total = num;
 };
@@ -19,27 +18,27 @@ $('#total').html(num);
 $('.number').click(function(){
 v = parseInt($(this).attr('value'));
 biggie(v);
+operation(v);
+toprow.push(v)
 });
 
 
 //CALLS OPERATOR FUNC TO RECEiVE FUNCTION + - * /
 $('.opera').click(function(){
 
-
-operand = v;
-toprow.push(operand)
-//START HERE: when sign changes, total displayed changes(what if second operand changes?)
+//START HERE: double check that main operation works(what if second operand changes?)
 if (isNaN(toprow[toprow.length - 1])){
 toprow.pop();
 toprow.push(this.value);
 }
+
 else{
 toprow.push(this.value);
 }
 
 $('#numbers').html(toprow.join(' '));
 
-operation(v);
+
 operation = operator(this.value);
 
 biggie(total);
