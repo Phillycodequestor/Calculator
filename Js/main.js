@@ -6,6 +6,7 @@ var v = " ";
 var total = " ";
 var operation = function (num){
 total = num;
+var operator = 0;
 };
 
 						
@@ -16,33 +17,35 @@ $('#total').html(num);
 
 //Gets the number clicked and sends to operation function
 $('.number').click(function(){
-v = parseInt($(this).attr('value'));
+v += parseInt($(this).attr('value'));
 biggie(v);
-operation(v);
-toprow.push(v)
+operator = v;
+
+
 });
+
 
 
 //CALLS OPERATOR FUNC TO RECEiVE FUNCTION + - * /
 $('.opera').click(function(){
 
-//START HERE: double check that main operation works(what if second operand changes?)
+//START HERE: base if on whether operator empty, not isNan
 if (isNaN(toprow[toprow.length - 1])){
 toprow.pop();
 toprow.push(this.value);
 }
 
 else{
+toprow.push(operator)
 toprow.push(this.value);
+operation(operator);
 }
 
 $('#numbers').html(toprow.join(' '));
 
-
 operation = operator(this.value);
 
 biggie(total);
-
 });
 
 //Click equals: call cleartop and tally in bottom row
