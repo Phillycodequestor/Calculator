@@ -2,7 +2,7 @@ $(document).ready(function(){
 
 
 var toprow = [];
-var v = " ";
+var v = "";
 var total = " ";
 var operation = function (num){
 total = num;
@@ -17,35 +17,35 @@ $('#total').html(num);
 
 //Gets the number clicked and sends to operation function
 $('.number').click(function(){
-v += parseInt($(this).attr('value'));
+v += $(this).attr('value');
+//START HERE: Get rid of spaces between numbers
 biggie(v);
-operator = v;
-
-
+operator = parseInt(v);
 });
-
-
 
 //CALLS OPERATOR FUNC TO RECEiVE FUNCTION + - * /
 $('.opera').click(function(){
 
-//START HERE: base if on whether operator empty, not isNan
-if (isNaN(toprow[toprow.length - 1])){
-toprow.pop();
-toprow.push(this.value);
-}
 
-else{
+//if (isNaN(toprow[toprow.length - 1])){
+//toprow.pop();
+//toprow.push(this.value);
+//}
+
+//else{
 toprow.push(operator)
 toprow.push(this.value);
 operation(operator);
-}
+//}
 
 $('#numbers').html(toprow.join(' '));
 
 operation = operator(this.value);
 
 biggie(total);
+
+operator = 0;
+v = "";
 });
 
 //Click equals: call cleartop and tally in bottom row
