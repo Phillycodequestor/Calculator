@@ -2,12 +2,12 @@ $(document).ready(function(){
 
 
 var toprow = [];
-var v = "";
+var v = " ";
 var total = " ";
 var operation = function (num){
 total = num;
-var operator = 0;
 };
+var operator = 0;
 
 						
 //displays number in bottom row
@@ -18,7 +18,7 @@ $('#total').html(num);
 //Gets the number clicked and sends to operation function
 $('.number').click(function(){
 v += $(this).attr('value');
-//START HERE: Get rid of spaces between numbers
+
 biggie(v);
 operator = parseInt(v);
 });
@@ -26,26 +26,22 @@ operator = parseInt(v);
 //CALLS OPERATOR FUNC TO RECEiVE FUNCTION + - * /
 $('.opera').click(function(){
 
+v = " ";
 
-//if (isNaN(toprow[toprow.length - 1])){
-//toprow.pop();
-//toprow.push(this.value);
-//}
-
-//else{
 toprow.push(operator)
 toprow.push(this.value);
-operation(operator);
-//}
-
 $('#numbers').html(toprow.join(' '));
 
-operation = operator(this.value);
+operation(operator);
+
+operation = op(this.value);
+//START HERE: Double-check everything working.
 
 biggie(total);
 
 operator = 0;
-v = "";
+
+
 });
 
 //Click equals: call cleartop and tally in bottom row
@@ -55,7 +51,7 @@ $('#equals').click(function(){
 });
 
 //RETURNS A FUNCTION TO PERFORM OPERATION/////////////////////////
-function operator (val) {
+function op(val) {
 if(val === "+"){
 return function (num){
 total += num;
