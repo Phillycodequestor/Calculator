@@ -3,7 +3,7 @@ $(document).ready(function(){
 
 var toprow = [];
 var v = " ";
-var total = " ";
+var total = 0;
 var operation = function (num){
 total = num;
 };
@@ -18,7 +18,6 @@ $('#total').html(num);
 //Gets the number clicked and sends to operation function
 $('.number').click(function(){
 v += $(this).attr('value');
-
 biggie(v);
 operator = parseInt(v);
 });
@@ -35,20 +34,27 @@ $('#numbers').html(toprow.join(' '));
 operation(operator);
 
 operation = op(this.value);
-//START HERE: Double-check everything working.
-
+ 
 biggie(total);
 
 operator = 0;
-
-
 });
 
 //Click equals: call cleartop and tally in bottom row
 $('#equals').click(function(){
-	biggie(total);
-	cleartop();
+operation(operator);
+biggie(total);
+total = 0;
+operator = 0;
+v = " ";
+cleartop();
 });
+//START HERE: test equals more. changing signs isn't working right.
+//Clear top row
+function cleartop(){
+$('#numbers').html(' ');
+toprow = [];
+}
 
 //RETURNS A FUNCTION TO PERFORM OPERATION/////////////////////////
 function op(val) {
@@ -77,14 +83,6 @@ total *= num;
 }
 };
 ////////////////////////////////////////////////////////
-
-////Clear buttons
-//Clear top row
-function cleartop(){
-$('#numbers').html(' ');
-toprow = [];
-toprow.push(total);
-}
 
 //Clears number entered
 $('#Clearevery').click(function(){
