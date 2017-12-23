@@ -15,19 +15,27 @@ function biggie(num){
 $('#total').html(num);	
 }; 
 
-//Gets the number clicked and sends to operation function
+//////////////////
 $('.number').click(function(){
 v += $(this).attr('value');
 biggie(v);
+if(isNaN(toprow[toprow.length - 1])){
+toprow.push(v);
+}
+else{
+toprow.pop();
+toprow.push(v);
+}
 operator = parseInt(v);
+
 });
 
 //CALLS OPERATOR FUNC TO RECEiVE FUNCTION + - * /
+/*
 $('.opera').click(function(){
 
 v = " ";
 
-toprow.push(operator)
 toprow.push(this.value);
 $('#numbers').html(toprow.join(' '));
 
@@ -39,6 +47,7 @@ biggie(total);
 
 operator = 0;
 });
+*/
 
 //Click equals: call cleartop and tally in bottom row
 $('#equals').click(function(){
@@ -49,7 +58,7 @@ operator = 0;
 v = " ";
 cleartop();
 });
-//START HERE: test equals more. changing signs isn't working right.
+
 //Clear top row
 function cleartop(){
 $('#numbers').html(' ');
@@ -101,6 +110,22 @@ total = num;
 };
 total = " "; 
 cleartop();
+});
+
+
+
+//start here: may not need first condition; what if sign clicked first?
+$('.opera').click(function(){
+if(toprow.length < 1){
+
+}
+else if(isNaN(toprow[toprow.length - 1])){
+
+}
+
+else {
+//proceed as normal	
+}
 });
 
 });
