@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
 
-var toprow = [];
+var toprow = [0];
 var v = " ";
 var total = 0;
 var operation = function (num){
@@ -27,7 +27,6 @@ toprow.pop();
 toprow.push(v);
 }
 operator = parseInt(v);
-
 });
 
 //CALLS OPERATOR FUNC TO RECEiVE FUNCTION + - * /
@@ -62,7 +61,7 @@ cleartop();
 //Clear top row
 function cleartop(){
 $('#numbers').html(' ');
-toprow = [];
+toprow = [0];
 }
 
 //RETURNS A FUNCTION TO PERFORM OPERATION/////////////////////////
@@ -114,17 +113,24 @@ cleartop();
 
 
 
-//start here: may not need first condition; what if sign clicked first?
+//start here: not working with double digits (create separate case when you only change signs)
 $('.opera').click(function(){
-if(toprow.length < 1){
-
+if(isNaN(toprow[toprow.length - 1])){
+toprow.pop();
+toprow.push(this.value);
+$('#numbers').html(toprow.join(' '));
 }
-else if(isNaN(toprow[toprow.length - 1])){
-
-}
-
 else {
-//proceed as normal	
+toprow.push(this.value);
+$('#numbers').html(toprow.join(' '));	
+v = " ";
+operation(operator);
+
+operation = op(this.value);
+ 
+biggie(total);
+
+operator = 0;
 }
 });
 
