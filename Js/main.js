@@ -113,12 +113,13 @@ cleartop();
 
 
 
-//start here: not working with double digits (create separate case when you only change signs)
+//start here: appears to be working. keep testing.
 $('.opera').click(function(){
 if(isNaN(toprow[toprow.length - 1])){
 toprow.pop();
 toprow.push(this.value);
 $('#numbers').html(toprow.join(' '));
+operation = op(this.value);
 }
 else {
 toprow.push(this.value);
