@@ -29,25 +29,6 @@ toprow.push(v);
 operator = parseInt(v);
 });
 
-//CALLS OPERATOR FUNC TO RECEiVE FUNCTION + - * /
-/*
-$('.opera').click(function(){
-
-v = " ";
-
-toprow.push(this.value);
-$('#numbers').html(toprow.join(' '));
-
-operation(operator);
-
-operation = op(this.value);
- 
-biggie(total);
-
-operator = 0;
-});
-*/
-
 //Click equals: call cleartop and tally in bottom row
 $('#equals').click(function(){
 operation(operator);
@@ -92,6 +73,7 @@ total *= num;
 };
 ////////////////////////////////////////////////////////
 
+//start here: is this working?
 //Clears number entered
 $('#Clearevery').click(function(){
 v = 0;
@@ -104,16 +86,12 @@ $('.Clearlowrow').click(function(){
 v = 0;
 $('#total').html(v);
 v=" ";
-var operation = function (num){
+operation = function (num){
 total = num;
 };
-total = " "; 
 cleartop();
 });
 
-
-
-//start here: appears to be working. keep testing.
 $('.opera').click(function(){
 if(isNaN(toprow[toprow.length - 1])){
 toprow.pop();
