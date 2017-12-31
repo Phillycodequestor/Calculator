@@ -30,19 +30,23 @@ operator = parseInt(v);
 });
 
 //Click equals: call cleartop and tally in bottom row
+//START HERE: what if user inadvertantely clicks equals? equals always performs operation using big number.
 $('#equals').click(function(){
 operation(operator);
 biggie(total);
-total = 0;
-operator = 0;
+operator = total;
 v = " ";
-cleartop();
+cleartop(total);
+
+operation = function (num){
+total = num;
+};
 });
 
 //Clear top row
-function cleartop(){
+function cleartop(tot){
 $('#numbers').html(' ');
-toprow = [0];
+toprow = [tot];
 }
 
 //RETURNS A FUNCTION TO PERFORM OPERATION/////////////////////////
@@ -73,7 +77,7 @@ total *= num;
 };
 ////////////////////////////////////////////////////////
 
-//start here: is this working?
+
 //Clears number entered
 $('#Clearevery').click(function(){
 v = 0;
