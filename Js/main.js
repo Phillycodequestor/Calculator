@@ -30,9 +30,9 @@ operator = parseInt(v);
 });
 
 //Click equals: call cleartop and tally in bottom row
-//START HERE: what if user inadvertantely clicks equals? equals always performs operation using big number.
+//START HERE: after user clicks equals with 1 number, addition not performed correctly
 $('#equals').click(function(){
-operation(operator);
+operation(total);
 biggie(total);
 operator = total;
 v = " ";
