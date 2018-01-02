@@ -30,17 +30,14 @@ operator = parseInt(v);
 });
 
 //Click equals: call cleartop and tally in bottom row
-//START HERE: after user clicks equals with 1 number, addition not performed correctly
 $('#equals').click(function(){
-operation(total);
+operation(operator);
 biggie(total);
-operator = total;
+//operator = total;
 v = " ";
 cleartop(total);
 
-operation = function (num){
-total = num;
-};
+//operation = function (num){ total = num;};
 });
 
 //Clear top row
@@ -97,6 +94,7 @@ cleartop();
 });
 
 $('.opera').click(function(){
+//checks if changing signs
 if(isNaN(toprow[toprow.length - 1])){
 toprow.pop();
 toprow.push(this.value);
@@ -107,6 +105,12 @@ else {
 toprow.push(this.value);
 $('#numbers').html(toprow.join(' '));	
 v = " ";
+
+if(toprow.length < 3){
+//START HERE: Need to be able to do operations with whatever comes out of equals.
+operation = function (num){ total = num;};	
+}
+
 operation(operator);
 
 operation = op(this.value);
