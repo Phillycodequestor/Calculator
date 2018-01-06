@@ -17,7 +17,24 @@ $('#total').html(num);
 
 //////////////////
 $('.number').click(function(){
-v += $(this).attr('value');
+singlenumber($(this).attr('value'));
+});
+
+START HERE: Appears to be working, but keep testing.
+//Click equals: call cleartop and tally in bottom row
+$('#equals').click(function(){
+operation(operator);
+cleartop();
+v = " ";
+singlenumber(total);
+operation = function (num){
+total = num;
+};
+});
+
+//Handles scenario where only one number selected
+function singlenumber(num){
+v += num;
 biggie(v);
 if(isNaN(toprow[toprow.length - 1])){
 toprow.push(v);
@@ -27,23 +44,12 @@ toprow.pop();
 toprow.push(v);
 }
 operator = parseInt(v);
-});
-
-//Click equals: call cleartop and tally in bottom row
-$('#equals').click(function(){
-operation(operator);
-biggie(total);
-//operator = total;
-v = " ";
-cleartop(total);
-
-//operation = function (num){ total = num;};
-});
+};
 
 //Clear top row
-function cleartop(tot){
+function cleartop(){
 $('#numbers').html(' ');
-toprow = [tot];
+toprow = [];
 }
 
 //RETURNS A FUNCTION TO PERFORM OPERATION/////////////////////////
@@ -73,7 +79,6 @@ total *= num;
 }
 };
 ////////////////////////////////////////////////////////
-
 
 //Clears number entered
 $('#Clearevery').click(function(){
@@ -105,11 +110,6 @@ else {
 toprow.push(this.value);
 $('#numbers').html(toprow.join(' '));	
 v = " ";
-
-if(toprow.length < 3){
-//START HERE: Need to be able to do operations with whatever comes out of equals.
-operation = function (num){ total = num;};	
-}
 
 operation(operator);
 
