@@ -20,17 +20,20 @@ $('.number').click(function(){
 singlenumber($(this).attr('value'));
 });
 
-START HERE: Appears to be working, but keep testing.
-//Click equals: call cleartop and tally in bottom row
+ //Click equals: call cleartop and tally in bottom row
 $('#equals').click(function(){
 operation(operator);
 cleartop();
 v = " ";
-singlenumber(total);
-operation = function (num){
-total = num;
-};
+biggie(total);
+addtoarray(total);
+//START HERE: Reset operation, but not so it inteferes when equals clicked twice.
 });
+
+function addtoarray(total){
+toprow.pop();
+toprow.push(total);
+};
 
 //Handles scenario where only one number selected
 function singlenumber(num){
