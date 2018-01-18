@@ -7,27 +7,44 @@ var total = 0;
 var operation = function (num){
 total = num;
 };
-var operator = 0;
+
+//var operator = " ";
 
 						
 //displays number in bottom row
 function biggie(num){
 $('#total').html(num);	
+};
+
+//START HERE: Get this function to work.
+function setoperator(num){
+var operator += num;
+return operator;
 }; 
 
-//////////////////
+ //Reads number entered sends to biggie to display
 $('.number').click(function(){
-singlenumber($(this).attr('value'));
+biggie(setoperator($(this).attr('value')));
 });
 
- //Click equals: call cleartop and tally in bottom row
+
+$('.opera').click(function(){
+//operator = parseInt(operator);
+operation(operator);
+//operation = op(this.value);
+confirm(total);
+//biggie(total);
+//operator = 0;
+});
+
+//Click equals: call cleartop and tally in bottom row
 $('#equals').click(function(){
 operation(operator);
 cleartop();
 v = " ";
 biggie(total);
 addtoarray(total);
-//START HERE: Reset operation, but not so it inteferes when equals clicked twice.
+
 });
 
 function addtoarray(total){
@@ -46,7 +63,7 @@ else{
 toprow.pop();
 toprow.push(v);
 }
-operator = parseInt(v);
+
 };
 
 //Clear top row
@@ -101,27 +118,19 @@ total = num;
 cleartop();
 });
 
-$('.opera').click(function(){
-//checks if changing signs
+
+
+});
+/*
 if(isNaN(toprow[toprow.length - 1])){
 toprow.pop();
 toprow.push(this.value);
 $('#numbers').html(toprow.join(' '));
-operation = op(this.value);
-}
+
 else {
 toprow.push(this.value);
 $('#numbers').html(toprow.join(' '));	
 v = " ";
-
-operation(operator);
-
-operation = op(this.value);
- 
-biggie(total);
-
-operator = 0;
 }
-});
-
-});
+}
+*/
