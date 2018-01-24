@@ -16,15 +16,10 @@ function biggie(num){
 $('#total').html(num);	
 };
 
-//START HERE: Get this function to work.
-function setoperator(num){
-var operator += num;
-return operator;
-}; 
-
- //Reads number entered sends to biggie to display
+//START HERE: create an operator variable. 
+//Reads number entered sends to biggie to display
 $('.number').click(function(){
-biggie(setoperator($(this).attr('value')));
+biggie($(this).attr('value'));
 });
 
 
