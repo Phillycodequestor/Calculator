@@ -3,7 +3,7 @@ $(document).ready(function(){
 
 var toprow = [0];
 var v = " ";
-var total = 0;
+//var total = 0;
 var operation = function (num){
 total = num;
 };
@@ -16,10 +16,16 @@ function biggie(num){
 $('#total').html(num);	
 };
 
-//START HERE: create an operator variable. 
+function settotal(num){
+var total = num;
+return total; 
+};
+
+//START HERE: can i create a closure that contains the variable total? 
 //Reads number entered sends to biggie to display
 $('.number').click(function(){
-biggie($(this).attr('value'));
+//biggie($(this).attr('value'));
+confirm(settotal($(this).attr('value')));
 });
 
 
@@ -39,7 +45,6 @@ cleartop();
 v = " ";
 biggie(total);
 addtoarray(total);
-
 });
 
 function addtoarray(total){
