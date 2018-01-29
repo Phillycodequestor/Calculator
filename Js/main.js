@@ -5,7 +5,7 @@ var toprow = [0];
 var v = " ";
 //var total = 0;
 var operation = function (num){
-total = num;
+total += num;
 };
 
 //var operator = " ";
@@ -16,9 +16,8 @@ function biggie(num){
 $('#total').html(num);	
 };
 
-function settotal(num){
-var total = num;
-return total; 
+function settotal(operation){
+ 
 };
 
 //START HERE: can i create a closure that contains the variable total? 
