@@ -1,15 +1,21 @@
 $(document).ready(function(){
+ 
+var workingnumber = "";
 
-//an object constructor that stores the selected value
-function Number(num){
-this.value = num;
-};
+//i give up :(
+$('.number').click(function(){
 
-//when number clicked, add to variable and revise the object value.
-$().click()
-var workingnumber += 
-var number = new Number(7);
+workingnumber += $(this).val();
+
+call();
+
+
 });
+
+function call(){
+	confirm(workingnumber);
+}
+});///ends docready
 
 
 
