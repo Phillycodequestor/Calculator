@@ -18,6 +18,7 @@ $('#total').html(runningtotal);
 
 $('.opera').click(function(){
 //when this clicked, add runningtotal to answer
+
 });
 
 
