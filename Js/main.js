@@ -1,26 +1,22 @@
 $(document).ready(function(){
-
-/*
+//NEXT: WHAT HAPPENS WHEN SIGN PRESSED
 var setrunningtotal = (function(){
 var total = "";
 return function(num){
 total += num;
-return parseInt(total);
+$('#total').html(total);
 };
 }());
-*/
+
 
 //displays runningtotal
 $('.number').click(function(){
-//var runningtotal = setrunningtotal($(this).val());
- 
-//$('#total').html(runningtotal);
-
-nummachine.add($(this).val());
+setrunningtotal($(this).val());
+ //nummachine.add($(this).val());
 });
 
-$('.opera').click(function(){
 
+$('.opera').click(function(){
 
 });
 
@@ -30,8 +26,15 @@ var answer = "";
 	return {
 	add: function(digit){
 	answer += digit;
+	//alert(answer);
+	}
+	/*
+	subtract: function(){
+	answer -= digit;
 	alert(answer);
 	}
+	*/ 
+
 	}; 
 
 })();
