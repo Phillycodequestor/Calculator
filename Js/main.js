@@ -1,5 +1,6 @@
 $(document).ready(function(){
 
+//Displays clicked number
 var setrunningtotal = (function(){
 var total = "";
 return function(num){
@@ -9,37 +10,34 @@ $('#total').html(total);
 }());
 
 
-//displays runningtotal
+//Sends clicked number to be displayed
 $('.number').click(function(){
-
 setrunningtotal($(this).val());
-
 });
-
 
 $('.opera').click(function(){
-
-numbermachine();
+numbermachine($(this).val());
 });
 
+function numbermachine(sign){
+var operation = getfunction(sign);
+alert(operation); 
+};
 
-//1. performs the operation
-//2. displays answer
-//3. determines next operation****
-var numbermachine = (function(){
-
-var answer = 0;
-
+function getfunction(opera){
+if (opera === "+"){
 return function() {
 answer += parseInt($('#total').text());
-alert(answer);
-//$('#total').html(answer);
-}; 
-	
-}());
-
+}
+}
+else {
+return "no operation"
+} 
+}
 
 });///ends docready
+
+//$('#total').html(answer);
 
 
 
