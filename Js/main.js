@@ -18,21 +18,41 @@ setrunningtotal($(this).val());
 $('.opera').click(function(){
 numbermachine($(this).val());
 });
-
-function numbermachine(sign){
-var operation = getfunction(sign);
-alert(operation); 
-};
+//WHY WON'T WORK SECOND TIME
+var numbermachine = (function(){
+var answer = 0;
+var operation = function() {
+return answer += parseInt($('#total').text());
+} 
+return function(sign){
+alert(operation()); 
+operation = getfunction(sign);
+alert(operation);
+}
+}());
 
 function getfunction(opera){
 if (opera === "+"){
 return function() {
-answer += parseInt($('#total').text());
+return answer += parseInt($('#total').text());
 }
 }
-else {
-return "no operation"
-} 
+else if (opera === "-") {
+return function() {
+return answer -= parseInt($('#total').text());
+}
+}
+else if (opera === "*") {
+return function() {
+return answer *= parseInt($('#total').text());
+}
+}
+else  {
+return function() {
+return answer /= parseInt($('#total').text());
+}
+}
+
 }
 
 });///ends docready
