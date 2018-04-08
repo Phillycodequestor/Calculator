@@ -18,7 +18,7 @@ setrunningtotal($(this).val());
 $('.opera').click(function(){
 numbermachine($(this).val());
 });
-//WHY WON'T WORK SECOND TIME
+
 var numbermachine = (function(){
 var answer = 0;
 var operation = function() {
@@ -31,7 +31,9 @@ alert(operation);
 }
 }());
 
+Problem: Answer not defined.
 function getfunction(opera){
+
 if (opera === "+"){
 return function() {
 return answer += parseInt($('#total').text());
