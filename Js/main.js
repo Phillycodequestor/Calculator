@@ -31,9 +31,9 @@ alert(operation);
 }
 }());
 
-Problem: Answer not defined.
+//Problem: Answer not defined.
 function getfunction(opera){
-
+//var answer = 0;
 if (opera === "+"){
 return function() {
 return answer += parseInt($('#total').text());
