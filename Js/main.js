@@ -15,6 +15,7 @@ $('.number').click(function(){
 setrunningtotal($(this).val());
 });
 
+
 $('.opera').click(function(){
 numbermachine($(this).val());
 });
@@ -31,7 +32,7 @@ alert(operation);
 }
 }());
 
-//Problem: Answer not defined.
+//Problem: Answer not defined and is two different variables
 function getfunction(opera){
 //var answer = 0;
 if (opera === "+"){
