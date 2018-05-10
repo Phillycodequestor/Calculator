@@ -9,13 +9,12 @@ $('#total').html(total);
 };
 }());
 
-
 //Sends clicked number to be displayed
 $('.number').click(function(){
 setrunningtotal($(this).val());
 });
 
-
+//try setting operation variable based on sign after performing operation
 $('.opera').click(function(){
 numbermachine($(this).val());
 });
@@ -57,7 +56,7 @@ return answer /= parseInt($('#total').text());
 }
 
 }
-
+*/
 });///ends docready
 
 //$('#total').html(answer);
