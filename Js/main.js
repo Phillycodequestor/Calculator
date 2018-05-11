@@ -14,24 +14,27 @@ $('.number').click(function(){
 setrunningtotal($(this).val());
 });
 
-//try setting operation variable based on sign after performing operation
-$('.opera').click(function(){
-numbermachine($(this).val());
-});
 
+$('.opera').click(function(){
+numbermachine();
+});
+//$(this).val();
+
+//NEXT: change operation based on which sign clicked.
 var numbermachine = (function(){
 var answer = 0;
 var operation = function() {
 return answer += parseInt($('#total').text());
 } 
-return function(sign){
+return function(){
 alert(operation()); 
-operation = getfunction(sign);
-alert(operation);
+//operation = getfunction(sign);
+//alert(operation);
 }
 }());
 
-//Problem: Answer not defined and is two different variables
+/*
+
 function getfunction(opera){
 //var answer = 0;
 if (opera === "+"){
