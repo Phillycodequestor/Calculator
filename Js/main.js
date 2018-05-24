@@ -1,9 +1,12 @@
 $(document).ready(function(){
 
+ 
+
 //Displays clicked number
 var setrunningtotal = (function(){
 var total = "";
 return function(num){
+	//NEXT: place if statement here to clear total.
 total += num;
 $('#total').html(total);
 };
@@ -16,38 +19,29 @@ setrunningtotal($(this).val());
 
 
 $('.opera').click(function(){
-numbermachine();
+numbermachine($(this).val());
 });
-//$(this).val();
 
-//NEXT: change operation based on which sign clicked.
 var numbermachine = (function(){
 var answer = 0;
 var operation = function() {
 return answer += parseInt($('#total').text());
 } 
-return function(){
+return function(sign){
 alert(operation()); 
-//operation = getfunction(sign);
-//alert(operation);
-}
-}());
-
-/*
-
-function getfunction(opera){
-//var answer = 0;
-if (opera === "+"){
+operation = getfunction(sign);
+function getfunction(){
+if (sign === "+"){
 return function() {
 return answer += parseInt($('#total').text());
 }
 }
-else if (opera === "-") {
+else if (sign === "-") {
 return function() {
 return answer -= parseInt($('#total').text());
 }
 }
-else if (opera === "*") {
+else if (sign === "*") {
 return function() {
 return answer *= parseInt($('#total').text());
 }
@@ -57,9 +51,9 @@ return function() {
 return answer /= parseInt($('#total').text());
 }
 }
-
 }
-*/
+}
+}());
 });///ends docready
 
 //$('#total').html(answer);
